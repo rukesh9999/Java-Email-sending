@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head xmlns:th="http://www.thymeleaf.org">
+<meta charset="ISO-8859-1">
+<title>Java Mail</title>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+ <script>
+ $(document).ready(function() {
+            $("button").click(function() {
+              
+               $.ajax({
+                  type : "GET",
+                  url : "http://localhost:9090/api/send",                
+                  success : function(data) {
+                     alert(data);
+                  },
+                  error : function(data) {
+                	  alert(data);
+                  }
+               });
+            });
+         });
+          </script>
+</head>
+<body>
+<button id="sendmail">send mail</button>
+</body>
+</html>
